@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_04_034324) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_115209) do
   create_table "coupons", force: :cascade do |t|
     t.float "discounted_amount"
     t.float "referral_amount"
@@ -20,6 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_034324) do
     t.integer "purchase_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "created_by"
+    t.integer "used_by"
+    t.boolean "used_code", default: false
     t.index ["purchase_id"], name: "index_coupons_on_purchase_id"
   end
 
