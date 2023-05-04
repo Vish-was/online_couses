@@ -36,21 +36,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_034324) do
   create_table "purchases", force: :cascade do |t|
     t.float "deposit_amount"
     t.float "final_balance"
-    t.bigint "generated_coupon_id"
     t.integer "user_id", null: false
     t.integer "course_id", null: false
-    t.integer "coupon_id", null: false
+    t.integer "generated_coupon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["coupon_id"], name: "index_purchases_on_coupon_id"
     t.index ["course_id"], name: "index_purchases_on_course_id"
+    t.index ["generated_coupon_id"], name: "index_purchases_on_generated_coupon_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "password_digest"
     t.string "reset_password_token"
     t.string "reset_password_sent_at"
     t.string "remember_created_at"
@@ -69,12 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_034324) do
     t.boolean "newsletter", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "password_digest"
   end
 
   add_foreign_key "coupons", "purchases"
-  add_foreign_key "purchases", "coupons"
+  add_foreign_key "purchases", "coupons", column: "generated_coupon_id"
   add_foreign_key "purchases", "courses"
   add_foreign_key "purchases", "users"
 end

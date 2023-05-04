@@ -1,7 +1,6 @@
 class CoursesController < ApplicationController
 	before_action :authorize_request
 	def create
-		debugger
 		@course = Course.new(courses_params)
     if @course.save
       render json: @course, status: :created
@@ -13,7 +12,8 @@ class CoursesController < ApplicationController
 
 	private
 
-	def genrate_coupon
-		SecureRandom.base36
+	def courses_params
+		params.permit(
+      :title, :deposit_amount, :final_balance, :start_date, :default_coupon_amount)
 	end
 end
