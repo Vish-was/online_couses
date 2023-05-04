@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "b5be16e4-4c1a-4267-ac47-4ba675927adc",
+		"name": "Test App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25566819"
+	},
+	"item": [
+		{
+			"name": "create users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users?name=test&username=test123&email=test@gmail.com&password=test@123&password_confirmation=test@123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						},
+						{
+							"key": "username",
+							"value": "test123"
+						},
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "test@123"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "test@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/login?email=test@gmail.com&password=test@123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "test@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users?name=test&username=test123&email=test@gmail.com&password=test@123&password_confirmation=test@123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						},
+						{
+							"key": "username",
+							"value": "test123"
+						},
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "test@123"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "test@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create purchases",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users?name=test&username=test123&email=test@gmail.com&password=test@123&password_confirmation=test@123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						},
+						{
+							"key": "username",
+							"value": "test123"
+						},
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "test@123"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "test@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODMwMzAxNDN9.zHRZTyjrVF5VboNmfvRTwt09J1WEumDFbgK2IZZk0Lw",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/users"
+			},
+			"response": []
+		}
+	]
+}
